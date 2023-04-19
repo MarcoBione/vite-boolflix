@@ -1,0 +1,43 @@
+info:
+
+chiave API 441611ce009131739736fda64feaa3cb   query= ?api_key=441611ce009131739736fda64feaa3cb
+
+base url : https://api.themoviedb.org/3/
+
+cio che bisogna mostrare:
+                        lista film
+                        lista serie tv 
+
+
+
+############################## ---- MILESTONE1:
+
+1 - PREPARAZIONE VSCODE CON LE VARIE INSTALLAZIONI:
+
+    1 - init di vue
+    2 - installazione pack json
+    3 - installazione di bootstrap + axios + sass + fontawesome (npm install bootstrap axios @fortawesome/fontawesome-free sass)
+
+
+2 - CREAZIONE DEI VARI COMPONENTI:
+
+    Struttura principale:         | Componenti annidati:
+
+    1 - header -------------------> + searchBar
+
+    2 - main ---------------------> + film list + card del film
+
+    3 - footer
+
+############################## ---- MILESTONE2:
+
+Concentrarsi sull'header e portarlo a termine
+
+Provare stampare a video tutti i film e serie in delle card personalizzate
+
+impostare un parte logica in grado di salvare in un file 'store.js' il valore digitato nel campo di input;
+
+
+############################## ---- MILESTONE3:
+
+provare ad attuare il filtro in modo tale che a video si vedano i film contenenti la parola/lettera nel loro titolo
