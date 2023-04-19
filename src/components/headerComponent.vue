@@ -2,9 +2,14 @@
     <div>
 
         <header>
+            <!-- logo -->
             <div class="logo">
                 <p>{{ store.logo }}</p>
             </div>
+
+            <!-- search -->
+            <input type="text">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </header>
 
     </div>

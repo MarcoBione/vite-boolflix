@@ -1,1 +1,7 @@
 @import "bootstrap/scss/bootstrap";
+// importing core styling file
+@import "/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+//  importing Font Awesome styles
+@import "/node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "/node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
