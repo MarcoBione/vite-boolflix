@@ -2,13 +2,17 @@
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 position-relative">
         <!-- carta con le proprietà passate dal genitore tramite props -->
         <div class="card bg-dark border border-0">
-            <img :src="store.imagePath + store.fileSize + image" alt="" class="img-fluid">
+            <img :src="store.imagePath + store.fileSize + image" alt="" class="img-fluid d-block">
         </div>
 
-        <div class="_myinfocard">
-            <p class="m-0 fs-5 text-white-50 text-truncate">{{ title }}</p>
+        <div class="_myinfocard text-center d-flex flex-column align-items-center justify-content-around">
+            <p class="m-0 fs-5 text-white">{{ title }}</p>
+            <div>
+                <p class="text-warning fw-semibold">Voti:</p>
+                <p class="text-warning fw-semibold">{{ votes }}</p>
+            </div>
+
             <img :src="'/images/' + checkFlags + '.png'" :alt="original_language" class="w-25">
-            <p>{{ votes }}</p>
         </div>
     </div>
 </template>

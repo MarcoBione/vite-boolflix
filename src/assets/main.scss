@@ -49,11 +49,13 @@
 
 ._myinfocard {
     //visibility: hidden;
-    width: 100%;
     position: absolute;
     top: 0;
-    background: rgba(33, 37, 41, 0);
+    left: 0;
+    padding: 10px;
+    background: rgba(2, 2, 2, 0.349);
     backdrop-filter: blur(4px);
+    border-radius: 5px;
     -webkit-backdrop-filter: blur(4px);
     height: 100%;
     opacity: 0%;
