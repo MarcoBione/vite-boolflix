@@ -2,6 +2,13 @@
 // importing core styling file
 @import "/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
+//font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 /*custom scroll bars*/
 
@@ -25,4 +32,17 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #888;
+}
+
+._mycommands {
+    padding-left: 15px;
+    color: white;
+    opacity: 50%;
+    transition: opacity 0.3s;
+    font-weight: 600;
+
+    &:hover {
+        opacity: 100%;
+
+    }
 }
