@@ -1,15 +1,15 @@
 <template>
   <div class="application">
-    <main>
+    <main class="overflow-x-auto">
 
       <headerComponent @on-search="getData" />
       <!-- la proprieta che deve rimanere in ascolto dell'evento necessita di una sintassi con il '-' perche l'html non vuole il camelcase -->
 
       <!-- films -->
       <h2>Film</h2>
-      <section class="container-fluid overflow-y-auto d-flex ">
+      <section class="container-fluid">
 
-        <div class="row overflow-y-auto d-flex">
+        <div class="row d-flex">
           <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
           <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
             :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average"
@@ -20,9 +20,9 @@
 
       <!-- tv series -->
       <h2>Serie TV</h2>
-      <section class="container-fluid ">
+      <section class="container-fluid">
 
-        <div class="row overflow-y-auto d-flex">
+        <div class="row">
           <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
           <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
             :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average"
@@ -111,7 +111,7 @@ export default {
 
 main {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   h2 {
     color: white;
