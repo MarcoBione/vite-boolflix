@@ -1,3 +1,28 @@
 @import "bootstrap/scss/bootstrap";
 // importing core styling file
 @import "/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+
+/*custom scroll bars*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #494949;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}

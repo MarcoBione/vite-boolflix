@@ -7,9 +7,9 @@
 
       <!-- films -->
       <h2>Film</h2>
-      <section class="container-fluid">
+      <section class="container-fluid px-3">
 
-        <div class="row d-flex">
+        <div class="row w-100 overflow-auto d-flex flex-nowrap">
           <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
           <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
             :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average"
@@ -20,9 +20,9 @@
 
       <!-- tv series -->
       <h2>Serie TV</h2>
-      <section class="container-fluid">
+      <section class="container-fluid px-3">
 
-        <div class="row">
+        <div class="row w-100 overflow-auto d-flex flex-nowrap">
           <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
           <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
             :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average"
