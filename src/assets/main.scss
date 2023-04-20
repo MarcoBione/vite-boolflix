@@ -20,7 +20,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #212529;
 }
 
 /* Handle */
@@ -44,5 +44,22 @@
     &:hover {
         opacity: 100%;
 
+    }
+}
+
+._myinfocard {
+    //visibility: hidden;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(33, 37, 41, 0);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    height: 100%;
+    opacity: 0%;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: 100%;
     }
 }

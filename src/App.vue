@@ -1,5 +1,5 @@
 <template>
-  <div class="application">
+  <div class="application bg-dark">
     <main class="overflow-x-auto px-4">
 
       <headerComponent class="fixed-top" @on-search="getData" />
@@ -9,7 +9,7 @@
       <h2 class="fs-1 mt-4">Film</h2>
       <section class="container-fluid">
 
-        <div class="row w-100 overflow-auto d-flex flex-nowrap">
+        <div class="row w-100 overflow-auto d-flex flex-nowrap py-3">
           <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
           <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
             :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average"
@@ -22,7 +22,7 @@
       <h2 class="fs-1 mt-4">Serie TV</h2>
       <section class="container-fluid">
 
-        <div class="row w-100 overflow-auto d-flex flex-nowrap mt-0">
+        <div class="row w-100 overflow-auto d-flex flex-nowrap py-3">
           <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
           <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
             :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average"
@@ -105,10 +105,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.application {
-  background-color: black;
-}
-
 main {
   width: 100%;
   height: 100%;
