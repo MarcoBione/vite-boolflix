@@ -1,16 +1,28 @@
 <template>
   <div>
-    <headerComponent />
+    <headerComponent @on-search="getData" />
+    <!-- la proprieta che deve rimanere in ascolto dell'evento necessita di una sintassi con il '-' perche l'html non vuole il camelcase -->
 
-    <ul>
-      <li v-for="film in store.movies">
-        <!-- controllo che tutto funzioni -->
-        {{ film.title }}
-        {{ film.original_title }}
-        {{ film.original_language }}
-        {{ film.vote_average }}
-      </li>
-    </ul>
+    <main>
+
+      <!-- films -->
+      <section class="container-fluid">
+        <h2>Film</h2>
+
+        <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
+        <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
+          :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average" />
+
+      </section>
+
+      <!-- tv series -->
+      <section class="container-fluid">
+        <h2>Serie TV</h2>
+
+      </section>
+    </main>
+
+
   </div>
 </template>
 
@@ -22,9 +34,11 @@ import headerComponent from './components/headerComponent.vue';
 import mainComponent from './components/mainComponent.vue';
 import footerComponent from './components/footerComponent.vue';
 
-export default {
+import CardItem from './components/cardItem.vue';
 
-  components: { headerComponent, mainComponent, footerComponent },
+export default {
+  //registro le chiavi dei componenti
+  components: { headerComponent, mainComponent, footerComponent, CardItem },
 
   data() {
     return {
@@ -53,7 +67,7 @@ export default {
   },
 
   mounted() {
-    this.getData()
+
   },
 
 }

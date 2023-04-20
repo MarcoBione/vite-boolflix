@@ -1,15 +1,17 @@
 <template>
     <div>
 
-        <header class="">
-            <!-- logo -->
-            <div class="logo">
-                <img :src="store.logo" alt="Application-logo">
+        <header class="container-fluid d-flex justify-content-between align-items-center">
+
+            <h1>Netflix</h1>
+
+            <div class="d-flex">
+                <input type="text" class="form-control me-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')">
+                <!--carico la ricerca effettuata dall'utente nella query -->
+                <button class="btn btn-danger" @click="$emit('onSearch')">Cerca</button>
+                <!-- aggiungo un evento con emit per trasmetterlo al padre 'app' -->
             </div>
 
-            <!-- search -->
-            <input type="text">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </header>
 
     </div>
