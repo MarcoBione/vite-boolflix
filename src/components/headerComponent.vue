@@ -1,10 +1,10 @@
 <template>
     <div>
 
-        <header>
+        <header class="">
             <!-- logo -->
             <div class="logo">
-                <p>{{ store.logo }}</p>
+                <img :src="store.logo" alt="Application-logo">
             </div>
 
             <!-- search -->
