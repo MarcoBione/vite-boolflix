@@ -18,7 +18,9 @@
       <!-- tv series -->
       <section class="container-fluid">
         <h2>Serie TV</h2>
-
+        <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
+        <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
+          :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average" />
       </section>
     </main>
 
@@ -47,7 +49,7 @@ export default {
   },
 
   methods: {
-    getData() {
+    getFilm() {
       //creo url
       const url = store.baseUrl + store.endpoints.movie;
       //creao query
@@ -63,6 +65,27 @@ export default {
         //controllo l'array
         console.log(store.movies);
       });
+    },
+    getSeries() {
+      //creo url
+      const url = store.baseUrl + store.endpoints.tv;
+      //creao query
+      const options = {
+        params: store.params
+      }
+      //effettuo la chiamata
+      axios.get(url, options).then((res) => {
+        //recupero i dati
+        //controllo dei dati chiamati
+        console.log(res.data);
+        this.store.series = res.data.results; //con this è più corretto
+        //controllo l'array
+        console.log(store.movies);
+      });
+    },
+    getData() {
+      this.getFilm(),
+        this.getSeries()
     }
   },
 
