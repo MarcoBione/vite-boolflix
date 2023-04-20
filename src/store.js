@@ -13,6 +13,6 @@ export const store = reactive({
         query: '', //imput dato dall'utente.. le lettere della ricerca provenienti dal campo di imput vengono salvate qua
     },
     imagePath: 'https://image.tmdb.org/t/p/',
-    fileSize: 'w342',
+    fileSize: 'w300',
 
 })

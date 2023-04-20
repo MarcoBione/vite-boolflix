@@ -3,10 +3,15 @@
 
         <header class="container-fluid d-flex justify-content-between align-items-center">
 
-            <h1>Netflix</h1>
+            <div class="h-25 d-flex">
+                <img src="../../public/images/Boolflix.png" alt="App-logo" class="h-100">
+                <p>Home</p>
+                <p>La mia lista</p>
+            </div>
 
             <div class="d-flex">
-                <input type="text" class="form-control me-3" v-model="store.params.query" @keyup.enter="$emit('onSearch')">
+                <input type="text" class="form-control me-3 w-50" v-model="store.params.query"
+                    @keyup.enter="$emit('onSearch')">
                 <!--carico la ricerca effettuata dall'utente nella query -->
                 <button class="btn btn-danger" @click="$emit('onSearch')">Cerca</button>
                 <!-- aggiungo un evento con emit per trasmetterlo al padre 'app' -->

@@ -1,28 +1,35 @@
 <template>
-  <div>
-    <headerComponent @on-search="getData" />
-    <!-- la proprieta che deve rimanere in ascolto dell'evento necessita di una sintassi con il '-' perche l'html non vuole il camelcase -->
-
+  <div class="application">
     <main>
 
-      <!-- films -->
-      <section class="container-fluid">
-        <h2>Film</h2>
+      <headerComponent @on-search="getData" />
+      <!-- la proprieta che deve rimanere in ascolto dell'evento necessita di una sintassi con il '-' perche l'html non vuole il camelcase -->
 
-        <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
-        <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
-          :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average"
-          :image="item.poster_path" />
+      <!-- films -->
+      <h2>Film</h2>
+      <section class="container-fluid overflow-y-auto d-flex ">
+
+        <div class="row overflow-y-auto d-flex">
+          <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
+          <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
+            :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average"
+            :image="item.poster_path" />
+        </div>
 
       </section>
 
       <!-- tv series -->
-      <section class="container-fluid">
-        <h2>Serie TV</h2>
-        <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
-        <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
-          :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average"
-          :image="item.poster_path" />
+      <h2>Serie TV</h2>
+      <section class="container-fluid ">
+
+        <div class="row overflow-y-auto d-flex">
+          <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
+          <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
+            :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average"
+            :image="item.poster_path
+            " />
+        </div>
+
       </section>
     </main>
 
@@ -86,8 +93,7 @@ export default {
       });
     },
     getData() {
-      this.getFilm(),
-        this.getSeries()
+      this.getFilm(), this.getSeries()
     }
   },
 
@@ -98,4 +104,23 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.application {
+  background-color: black;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+
+  h2 {
+    color: white;
+    opacity: 50%;
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 100%
+    }
+  }
+}
+</style>
