@@ -5,7 +5,7 @@
             <img :src="store.imagePath + store.fileSize + image" alt="" class="img-fluid">
             <p>{{ title }}</p>
             <!-- <p>{{ original_title }}</p> -->
-            <img :src="'/images/' + original_language + '.png'" :alt="original_language" class="w-25">
+            <img :src="'/images/' + checkFlags + '.png'" :alt="original_language" class="w-25">
             <p>{{ votes }}</p>
         </div>
     </div>
@@ -34,9 +34,17 @@ export default {
                 'es',
                 'ja',
                 'fr',
-                'kn',
-
             ],
+        }
+    },
+
+    computed: {
+        checkFlags() {
+            if (this.flags.includes(this.original_language)) {
+                return this.original_language;
+            } else {
+                return 'flying';
+            }
         }
     }
 }
