@@ -11,7 +11,8 @@
 
         <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
         <CardItem v-for="item, index in store.movies" :key="item.id" :title="item.title"
-          :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average" />
+          :original_title="item.original_title" :original_language="item.original_language" :votes="item.vote_average"
+          :image="item.poster_path" />
 
       </section>
 
@@ -20,7 +21,8 @@
         <h2>Serie TV</h2>
         <!-- componente 'card' il quale passo le proprità contenute nell'array in store + ciclo stampa -->
         <CardItem v-for="item, index in store.series" :key="item.id" :title="item.name"
-          :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average" />
+          :original_title="item.original_name" :original_language="item.original_language" :votes="item.vote_average"
+          :image="item.poster_path" />
       </section>
     </main>
 
@@ -60,7 +62,7 @@ export default {
       axios.get(url, options).then((res) => {
         //recupero i dati
         //controllo dei dati chiamati
-        console.log(res.data);
+        //console.log(res.data);
         this.store.movies = res.data.results; //con this è più corretto
         //controllo l'array
         console.log(store.movies);
@@ -77,10 +79,10 @@ export default {
       axios.get(url, options).then((res) => {
         //recupero i dati
         //controllo dei dati chiamati
-        console.log(res.data);
+        //console.log(res.data);
         this.store.series = res.data.results; //con this è più corretto
         //controllo l'array
-        console.log(store.movies);
+        console.log(store.series);
       });
     },
     getData() {
